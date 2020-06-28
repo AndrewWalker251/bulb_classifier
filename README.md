@@ -26,20 +26,28 @@ I scraped the image data from google image search. Here's an example of each of 
 
 ## B15 (519 images)
 ![alt text][image1]
+<img src="./example_data/B15/B15518.jpg" alt="drawing" height="150"/>
 ## B22 (490 images)
 ![alt text][image2]
+<img src="./example_data/B22/B22489.jpg" alt="drawing" height="150"/>
 ## E14 (562 images)
 ![alt text][image3]
+<img src="./example_data/E14/E140.jpg" alt="drawing" height="150"/>
 ## E27 (568 images)
 ![alt text][image4]
+<img src="./example_data/E27/E270.jpg" alt="drawing" height="150"/>
 ## G4 (665 images)
 ![alt text][image5]
+<img src="./example_data/G4/G40.jpg" alt="drawing" height="150"/>
 ## G9 (592 images)
 ![alt text][image6]
+<img src="./example_data/G9/G90.jpg" alt="drawing" height="150"/>
 ## GU10 (479 images)
 ![alt text][image7]
+<img src="./example_data/GU10/GU100.jpg" alt="drawing" height="150"/>
 ## MR16 (614 images)
 ![alt text][image8]
+<img src="./example_data/MR16/MR160.jpg" alt="drawing" height="150"/>
 
 
 ### Challenges
@@ -55,4 +63,20 @@ This is quite a tricky problem to try and solve. Here are some of the main issue
 4. If this was to be an implementation where people take a picture on their phone of their lightbulb the domain of the picture is likely to be quite different to these provided by google which tend to be from images used to sell the bulb and have white backgrounds.
 
 5. Unusual content means there are no pretrained networks on a similar domain. To use transfer learning more later layers will need retraining which makes the training process much slower. 
+
+### Method
+
+I initially tried a CNN trained from scratch. I was struggling to get any decent performance. CNNs from scratch take a lot of training. There was no apparent improvement with increased amount of training. With such poor performance (high bias) I was looking to use a bigger network, train for longer or change the learning rate. 
+
+### Transfer Learning 
+Using a pretrained network should help speed up training rather than training from scratch. Depending on how close the domain of the pretraining and the problem are would effect how many layers of the network to leave as trainable. Allowing all layers to be trainable would mean just using the pretrained weights as initization weights which might still be useful. 
+
+The classifier currently isn't very good at predicting the lightbulb type. The challenges above are proving difficult to overcome. I'd like to look at collating my own dataset of images as I think the current dataset is quite poor quality. 
+
+I think to solve this problem it might be required to crop the image to just the connector. An option here would be to use a object detection approach and train the object detector to detect the connector and then which connector it is. This would require training a object detection architecture and the need to have images labelled up with bounding boxes for the connector and the type. 
+
+
+
+
+
 
