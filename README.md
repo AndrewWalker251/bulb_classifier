@@ -25,28 +25,20 @@ This project attempts to build a classifier to identify the different bulb types
 I scraped the image data from google image search. Here's an example of each of the image type and the number of images available in the total dataset. 
 
 ## B15 (519 images)
-![alt text][image1]
 <img src="./example_data/B15/B15518.jpg" alt="drawing" height="150"/>
 ## B22 (490 images)
-![alt text][image2]
 <img src="./example_data/B22/B22489.jpg" alt="drawing" height="150"/>
 ## E14 (562 images)
-![alt text][image3]
 <img src="./example_data/E14/E140.jpg" alt="drawing" height="150"/>
 ## E27 (568 images)
-![alt text][image4]
 <img src="./example_data/E27/E270.jpg" alt="drawing" height="150"/>
 ## G4 (665 images)
-![alt text][image5]
 <img src="./example_data/G4/G40.jpg" alt="drawing" height="150"/>
 ## G9 (592 images)
-![alt text][image6]
 <img src="./example_data/G9/G90.jpg" alt="drawing" height="150"/>
 ## GU10 (479 images)
-![alt text][image7]
 <img src="./example_data/GU10/GU100.jpg" alt="drawing" height="150"/>
 ## MR16 (614 images)
-![alt text][image8]
 <img src="./example_data/MR16/MR160.jpg" alt="drawing" height="150"/>
 
 
