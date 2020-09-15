@@ -44,7 +44,7 @@ In the object detection project I created my own dataset based on pictures taken
 
 Here's an example: 
 
-<img src="example_object_detection" alt="obj example" height="150"/>
+<img src="./example_data/example_object_detection.PNG" alt="obj example" height="150"/>
 
 
 ### Challenges
