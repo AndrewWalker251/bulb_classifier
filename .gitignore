@@ -2,3 +2,4 @@
 
 bulb_data/
 *.pth
+.ipynb_*

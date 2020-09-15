@@ -2,12 +2,11 @@
 
 When changing  a light bulb there are a few different connection types. This can be confusing for the consumer and frustrating to have to go and fiqure it out on the web. 
 
-If you could just take a picture of the connection and be told which connection it is, this would be highly preferable. 
+If you could just take a picture of the lightbulb and be told which connection it is, this would be highly preferable. You could then be directly linked to buy one. 
 
-This project attempts to build a classifier to identify the different bulb types.
+This project attempts to build a classifier/object detector to identify the different bulb types.
 
- The different classes (bulb types) included in the project are ['B15','B22','E14', 'E27', 'G4', 'G9','GU10', 'MR16']
- 
+The different classes (bulb types) included in the project are ['B15','B22','E14', 'E27', 'G4', 'G9','GU10', 'MR16']
  
 ## Example Images  
 
@@ -41,32 +40,35 @@ I scraped the image data from google image search. Here's an example of each of 
 ## MR16 (614 images)
 <img src="./example_data/MR16/MR160.jpg" alt="drawing" height="150"/>
 
+In the object detection project I created my own dataset based on pictures taken on my phone and labelled these using LabelBox. 
+
+Here's an example: 
+
+<img src="example_object_detection" alt="obj example" height="150"/>
+
 
 ### Challenges
 
-This is quite a tricky problem to try and solve. Here are some of the main issues. 
-
-1. Bulb similarity. A lot of the bulbs connectors look similar - they're not dramatically different. They're mostly silver metal prongs of slightly different shape. 
+1. Bulb similarity. A lot of the bulbs connectors look similar - they're not dramatically different. 
 
 2. The part of the bulb that matters is only the connector. The rest of the image is irrelevant. The main bulb shape can look very similar between two different types. 
 
-3. The training dataset isn't that big and contains errors. 
+3. The classification training dataset isn't that big and contains errors. The object detection training dataset is also small as limited by manual labeling.
 
-4. If this was to be an implementation where people take a picture on their phone of their lightbulb the domain of the picture is likely to be quite different to these provided by google which tend to be from images used to sell the bulb and have white backgrounds.
+4. If this was to be an implementation where people take a picture on their phone of their lightbulb, the domain of the picture is likely to be quite different to these provided by google which tend to be from images used to sell the bulb and have white backgrounds.
 
-5. Unusual content means there are no pretrained networks on a similar domain. To use transfer learning more later layers will need retraining which makes the training process much slower. 
+5. Unusual content means there are no pretrained networks on a similar domain. To use transfer learning more later layers may need retraining which makes the training process slower. 
 
 ### Method
 
-I initially tried a CNN trained from scratch. I was struggling to get any decent performance. CNNs from scratch take a lot of training. There was no apparent improvement with increased amount of training. With such poor performance (high bias) I was looking to use a bigger network, train for longer or change the learning rate. 
+1. CNN classifier from scratch 
+2. CNN classifier with Transfer Learning
+3. Object Detection with pretrained network. 
 
-### Transfer Learning 
-Using a pretrained network should help speed up training rather than training from scratch. Depending on how close the domain of the pretraining and the problem are would effect how many layers of the network to leave as trainable. Allowing all layers to be trainable would mean just using the pretrained weights as initization weights which might still be useful. 
 
-The classifier currently isn't very good at predicting the lightbulb type. The challenges above are proving difficult to overcome. I'd like to look at collating my own dataset of images as I think the current dataset is quite poor quality. 
+### Results
 
-I think to solve this problem it might be required to crop the image to just the connector. An option here would be to use a object detection approach and train the object detector to detect the connector and then which connector it is. This would require training a object detection architecture and the need to have images labelled up with bounding boxes for the connector and the type. 
-
+Ongoing
 
 
 
