@@ -71,6 +71,22 @@ Here's an example:
 Ongoing
 
 
+### TODO 
+
+General: 
+-Include more classes
+-Data augmentation
+-Include a ‘not sure’ option based on softmax probabilities.
+-Include more variety in the images (different mobile phone cameras, lighting, positions)
+-Test speed of inference (how quick will it provide the solution to the customer - depends on API)
+-Experiment hosting through an API.
+
+Improving the classification
+-Reduce variance (more images and/or regularisation).
+-Have the test as representative of the real goal - phone pictures.
+
+Improving the object detector
+-Test against a larger test dataset to create precision/ recall for comparison.
 
 
 
